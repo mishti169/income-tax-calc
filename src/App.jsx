@@ -24,7 +24,16 @@ function App() {
 					<input type='number' />
 					<label>Saving Bank Interest u/s 80TTA</label>
 					<input type='number' />
+					<input type='submit' value='Calculate' />
 				</form>
+			</div>
+			<div>
+				<span>
+					Tax Old Regime : <b>{0}</b>
+				</span>
+				<span>
+					Tax New Regime : <b>{0}</b>
+				</span>
 			</div>
 		</div>
 	);
