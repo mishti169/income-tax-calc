@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { getNewCalTax, getOldCalTax } from './util';
 
@@ -24,11 +24,9 @@ function App() {
 	};
 
 	const changeInputVal = (event) => {
-		console.log(event.target.name);
 		setUserInput((x) => {
 			return { ...x, [event.target.name]: +event.target.value };
 		});
-		console.log('change input val');
 	};
 
 	const onSubmitGetTax = (event) => {
@@ -46,16 +44,12 @@ function App() {
 			userInput.hi -
 			userInput.section80TTA;
 
-		const oldTax = getOldCalTax(taxableIncome);
-		const newTax = getNewCalTax(userInput.totalIncome);
+		const oldTaxAmount = getOldCalTax(taxableIncome);
+		const newTaxAmount = getNewCalTax(userInput.totalIncome);
 
-		setOldTax(oldTax);
-		setNewTax(newTax);
+		setOldTax(oldTaxAmount);
+		setNewTax(newTaxAmount);
 	};
-
-	useEffect(() => {
-		console.log(userInput);
-	}, [userInput]);
 
 	return (
 		<div className='App'>
